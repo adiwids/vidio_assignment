@@ -1,0 +1,11 @@
+a. Have you written any automated tests for your code?
+
+If the answer is yes,
+
+b. What type / level of tests did you write?
+c. What test framework or tools did you use?
+
+If the answer is no,
+
+b. What do you think are the advantages of automated tests?
+c. What do you think are the disadvantages of automated tests?

@@ -1,0 +1,19 @@
+Exercise:
+
+== Output START ==
+Log:
+Charlie Zoe - charlie.zoe@example.com: insert success
+Andre Xavier - andre.xavier@example.com: insert success
+Charlie Xyz - charlie.zoe@example.com: duplicate email address
+Jean Summers - jean.summers@example.com: insert success
+
+Contact list:
+1. Andre Xavier - andre.xavier@example.com
+2. Charlie Zoe - charlie.zoe@example.com
+3. Jean Summers - jean.summers@example.com
+== Output END ==
+
+Answers:
+
+Using Hash with email as key and name as value
+Hash has built-in function to check if the key exists or not for duplicate checking.
