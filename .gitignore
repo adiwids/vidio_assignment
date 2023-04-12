@@ -1,2 +1,4 @@
 /.bundle
-/exercise_interview
+/tmp/*
+!/tmp/.keep
+/.gradle
