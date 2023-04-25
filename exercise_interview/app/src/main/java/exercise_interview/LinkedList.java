@@ -96,9 +96,14 @@ public class LinkedList {
 
   void addAfter(Object value, Object afterValue) {
     Node pivot = findByValue(afterValue);
-    Node oldNextNode = pivot.nextNode;
-    pivot.nextNode = null;
-    add(value);
-    add(oldNextNode);
+    Node oldNextNode = null;
+    if(pivot != null) {
+      oldNextNode = pivot.nextNode;
+      pivot.nextNode = null;
+      add(value);
+      add(oldNextNode);
+    } else {
+      add(value);
+    }
   }
 }

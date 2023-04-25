@@ -148,4 +148,16 @@ public class LinkedListTest {
     Node one = list.get(1);
     assertEquals(2, one.nextNode.value);
   }
+
+  @Test
+  void testAddEntryAfterSpecificEntryWhenPivotEntryNotFoundShouldAppendToLast() {
+    LinkedList list = new LinkedList();
+    list.add(1);
+    list.add("Ambulance");
+    list.add(true);
+    list.add(null);
+    list.addAfter("Indonesia", 2);
+    Node nullObject = list.get(null);
+    assertEquals("Indonesia", nullObject.nextNode.value);
+  }
 }
