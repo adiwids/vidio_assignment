@@ -68,7 +68,7 @@ public class LinkedListTest {
   }
 
   @Test
-  void testRemoveEntryByValueWhenValueIsNotInTheListShouldReduceCount() {
+  void testRemoveEntryByValueWhenValueIsNotInTheListShouldNotReduceCount() {
     LinkedList list = new LinkedList();
     list.add(1);
     list.add("Ambulance");
