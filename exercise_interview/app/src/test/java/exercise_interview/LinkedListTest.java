@@ -133,4 +133,19 @@ public class LinkedListTest {
     list.add("Ambulance");
     assertEquals(4, list.size());
   }
+
+  @Test
+  void testAddEntryAfterSpecificEntry() {
+    LinkedList list = new LinkedList();
+    list.add(1);
+    list.add("Ambulance");
+    list.add(true);
+    list.add(null);
+    list.addAfter("Indonesia", true);
+    Node truthy = list.get(true);
+    assertEquals("Indonesia", truthy.nextNode.value);
+    list.addAfter(2, 1);
+    Node one = list.get(1);
+    assertEquals(2, one.nextNode.value);
+  }
 }

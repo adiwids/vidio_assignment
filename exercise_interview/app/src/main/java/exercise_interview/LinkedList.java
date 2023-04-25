@@ -93,4 +93,12 @@ public class LinkedList {
       newNextNode.prevNode = tmpPrevNode;
     }
   }
+
+  void addAfter(Object value, Object afterValue) {
+    Node pivot = findByValue(afterValue);
+    Node oldNextNode = pivot.nextNode;
+    pivot.nextNode = null;
+    add(value);
+    add(oldNextNode);
+  }
 }
