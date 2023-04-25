@@ -9,9 +9,10 @@ public class LinkedList {
   }
 
   Node headNode = null;
+  int entriesCount = 0;
 
   int size() {
-    return countNodes();
+    return entriesCount;
   }
 
   void add(Object value) {
@@ -23,6 +24,7 @@ public class LinkedList {
     } else {
       appendNext(newEntry);
     }
+    entriesCount += 1;
   }
 
   private void appendNext(Node entry) {
@@ -45,16 +47,5 @@ public class LinkedList {
     }
 
     return null;
-  }
-
-  private int countNodes() {
-    int count = 0;
-    Node current = headNode;
-    while(current != null) {
-      count += 1;
-      current = current.nextNode;
-    }
-
-    return count;
   }
 }
