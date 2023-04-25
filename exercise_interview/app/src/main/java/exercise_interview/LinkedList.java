@@ -16,6 +16,10 @@ public class LinkedList {
   }
 
   void add(Object value) {
+    if(contains(value)) {
+      return;
+    }
+
     Node newEntry = new Node();
     newEntry.value = value;
 
