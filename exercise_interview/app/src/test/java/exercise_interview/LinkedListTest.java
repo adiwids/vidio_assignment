@@ -65,6 +65,8 @@ public class LinkedListTest {
     list.add(null);
     list.remove(null);
     assertFalse(list.contains(null));
+    list.remove("Ambulance");
+    assertFalse(list.contains("Ambulance"));
   }
 
   @Test
