@@ -44,4 +44,38 @@ public class LinkedListTest {
     assertFalse(list.contains(false));
     assertTrue(list.contains(true));
   }
+
+  @Test
+  void testRemoveEntryByValuWhenValueIsInTheListShouldReduceCount() {
+    LinkedList list = new LinkedList();
+    list.add(1);
+    list.add("Ambulance");
+    list.add(true);
+    list.add(null);
+    assertEquals(4, list.size());
+    list.remove(null);
+    assertEquals(3, list.size());
+  }
+  @Test
+  void testRemoveEntryByValueWhenValueIsInTheListShouldNotContainRemovedEntry() {
+    LinkedList list = new LinkedList();
+    list.add(1);
+    list.add("Ambulance");
+    list.add(true);
+    list.add(null);
+    list.remove(null);
+    assertFalse(list.contains(null));
+  }
+
+  @Test
+  void testRemoveEntryByValueWhenValueIsNotInTheListShouldReduceCount() {
+    LinkedList list = new LinkedList();
+    list.add(1);
+    list.add("Ambulance");
+    list.add(true);
+    list.add(null);
+    assertEquals(4, list.size());
+    list.remove(2);
+    assertEquals(4, list.size());
+  }
 }

@@ -60,4 +60,24 @@ public class LinkedList {
 
     return false;
   }
+
+  void remove(Object value) {
+    if(contains(value)) {
+      Node current = headNode;
+      while(current != null) {
+        if(current.value == value) {
+          Node tmpPrevNode = current.prevNode;
+          Node newNextNode = current.nextNode;
+          if(tmpPrevNode != null) {
+            tmpPrevNode.nextNode = newNextNode;
+          }
+          if(newNextNode != null) {
+            newNextNode.prevNode = tmpPrevNode;
+          }
+          entriesCount -= 1;
+        }
+        current = current.nextNode;
+      }
+    }
+  }
 }
