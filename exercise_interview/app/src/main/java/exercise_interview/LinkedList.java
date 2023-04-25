@@ -48,4 +48,16 @@ public class LinkedList {
 
     return null;
   }
+
+  boolean contains(Object value) {
+    Node current = headNode;
+    while(current != null) {
+      if(current.value == value) {
+        return true;
+      }
+      current = current.nextNode;
+    }
+
+    return false;
+  }
 }

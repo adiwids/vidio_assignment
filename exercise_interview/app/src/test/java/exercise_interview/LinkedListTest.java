@@ -22,4 +22,26 @@ public class LinkedListTest {
     list.add(null);
     assertEquals(4, list.size());
   }
+
+  @Test
+  void testFindEntryByValueWhenEntryNotFoundShouldReturnFalse() {
+    LinkedList list = new LinkedList();
+    assertFalse(list.contains(1));
+    list.add("Ambulance");
+    assertFalse(list.contains("Indonesia"));
+    list.add(true);
+    assertFalse(list.contains(false));
+  }
+
+  @Test
+  void testFindEntryByValueWhenEntryFoundShouldReturnTrue() {
+    LinkedList list = new LinkedList();
+    assertFalse(list.contains("Ambulance"));
+    list.add("Ambulance");
+    assertTrue(list.contains("Ambulance"));
+    assertFalse(list.contains("Indonesia"));
+    list.add(true);
+    assertFalse(list.contains(false));
+    assertTrue(list.contains(true));
+  }
 }
