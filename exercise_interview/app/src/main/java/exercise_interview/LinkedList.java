@@ -50,34 +50,43 @@ public class LinkedList {
   }
 
   boolean contains(Object value) {
+    Node found = findByValue(value);
+
+    return found != null;
+  }
+
+  void remove(Object value) {
+    Node toBeRemoved = findByValue(value);
+    if(toBeRemoved != null) {
+      updateRemovedLink(toBeRemoved);
+      entriesCount -= 1;
+    }
+  }
+
+  Node get(Object value) {
+    return findByValue(value);
+  }
+
+  private Node findByValue(Object value) {
     Node current = headNode;
     while(current != null) {
       if(current.value == value) {
-        return true;
+        return current;
       }
       current = current.nextNode;
     }
 
-    return false;
+    return null;
   }
 
-  void remove(Object value) {
-    if(contains(value)) {
-      Node current = headNode;
-      while(current != null) {
-        if(current.value == value) {
-          Node tmpPrevNode = current.prevNode;
-          Node newNextNode = current.nextNode;
-          if(tmpPrevNode != null) {
-            tmpPrevNode.nextNode = newNextNode;
-          }
-          if(newNextNode != null) {
-            newNextNode.prevNode = tmpPrevNode;
-          }
-          entriesCount -= 1;
-        }
-        current = current.nextNode;
-      }
+  private void updateRemovedLink(Node current) {
+    Node tmpPrevNode = current.prevNode;
+    Node newNextNode = current.nextNode;
+    if(tmpPrevNode != null) {
+      tmpPrevNode.nextNode = newNextNode;
+    }
+    if(newNextNode != null) {
+      newNextNode.prevNode = tmpPrevNode;
     }
   }
 }
